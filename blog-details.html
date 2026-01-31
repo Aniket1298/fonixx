@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - FONIXX Consultancy</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-md);
+            background: var(--color-bg-darker);
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .article-date {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--spacing-md);
+            background: var(--color-gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .article-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .article-content {
+            font-family: var(--font-secondary);
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+        }
+
+        /* Markdown Styles */
+        .article-content h1,
+        .article-content h2,
+        .article-content h3 {
+            color: var(--color-text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--color-text-primary);
+        }
+
+        .article-content img {
+            max-width: 100%;
+            border-radius: var(--border-radius-sm);
+            margin: 1.5rem 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-muted);
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="fonixx_symbol.png" alt="FONIXX Consultancy">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i>☰</i>
+            </button>
+        </div>
+    </nav>
+
+    <div style="height: 80px;"></div>
+
+    <!-- Article Section -->
+    <div class="article-container">
+        <a href="blog.html" class="back-btn">← Back to Blog</a>
+
+        <div id="loading" class="text-center">
+            <p>Loading article...</p>
+        </div>
+
+        <div id="article-content-wrapper" style="display: none;">
+            <header class="article-header">
+                <span class="article-date" id="post-date"></span>
+                <h1 class="article-title" id="post-title"></h1>
+            </header>
+
+            <img id="post-image" src="" alt="" class="article-image">
+
+            <div class="article-content" id="post-body">
+                <!-- Markdown content rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About FONIXX</h3>
+                    <p>Professional consulting firm dedicated to helping entrepreneurs and businesses achieve
+                        sustainable growth through expert guidance and innovative solutions.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="why-choose-us.html">Why Choose Us</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <a href="services.html#franchise">Franchise Consulting</a>
+                    <a href="services.html#recruitment">Recruitment Agency</a>
+                    <a href="services.html#business">Business Consultancy</a>
+                    <a href="services.html#digital">Digital Marketing</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 Chandmari Road, Near Ayar Bazar<br>Varanasi, India</p>
+                    <p>📞 +91 9919914503</p>
+                    <p>✉️ info@fonixx.in</p>
+                    <p>🌐 www.fonixx.in</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 FONIXX Consultancy Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const loading = document.getElementById('loading');
+            const contentWrapper = document.getElementById('article-content-wrapper');
+
+            // Get ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+
+            if (postId === null) {
+                loading.innerHTML = '<p>Article not found.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch('data/posts.json?t=' + new Date().getTime());
+                if (!response.ok) throw new Error('Failed to load posts');
+
+                const data = await response.json();
+                const posts = data.posts || [];
+
+                // Sort just like the list page to ensure index matches
+                posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                const post = posts[postId];
+
+                if (!post) {
+                    loading.innerHTML = '<p>Article not found.</p>';
+                    return;
+                }
+
+                // Render content
+                document.getElementById('post-title').textContent = post.title;
+                document.getElementById('post-date').textContent = new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+
+                const img = document.getElementById('post-image');
+                if (post.image) {
+                    img.src = post.image;
+                    img.alt = post.title;
+                } else {
+                    img.style.display = 'none';
+                }
+
+                // Parse markdown
+                document.getElementById('post-body').innerHTML = marked.parse(post.body);
+
+                loading.style.display = 'none';
+                contentWrapper.style.display = 'block';
+
+            } catch (error) {
+                console.error('Error loading article:', error);
+                loading.innerHTML = '<p>Error loading article. Please try again later.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>
